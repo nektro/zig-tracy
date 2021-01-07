@@ -3,7 +3,7 @@
 [![license](https://img.shields.io/github/license/nektro/zig-tracy.svg)](https://github.com/nektro/zig-tracy/blob/master/LICENSE)
 [![discord](https://img.shields.io/discord/551971034593755159.svg?logo=discord)](https://discord.gg/P6Y4zQC)
 
-Zig bindings for the Tracy profiler.
+Zig integration for the Tracy profiler.
 
 https://github.com/wolfpld/tracy
 
@@ -16,6 +16,18 @@ Using the https://github.com/nektro/zigmod package manager.
 dependencies:
   - type: git
     path: https://github.com/nektro/zig-tracy
+```
+
+## Adding it to your code
+```zig
+const tracy = @import("tracy");
+
+fn function_i_wish_to_trace() void {
+    const t = tracy.trace(@src());
+    defer t.end();
+    // ...
+    // the rest of the function body
+}
 ```
 
 ## Building
