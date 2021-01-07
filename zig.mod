@@ -9,6 +9,7 @@ dependencies:
       -
     c_source_flags:
       - -DTRACY_ENABLE
+      - -fno-sanitize=undefined
     c_source_files:
       - TracyClient.cpp
   - type: system_lib
