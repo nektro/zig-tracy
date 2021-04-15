@@ -6,7 +6,7 @@ description: Zig integration for the Tracy profiler.
 dependencies:
   - type: git
     path: https://github.com/wolfpld/tracy
-    version: tag-v0.7.4
+    version: tag-v0.7.5
     c_include_dirs:
       -
     c_source_flags:
