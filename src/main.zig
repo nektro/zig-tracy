@@ -16,7 +16,7 @@ pub fn main() anyerror!void {
     count += 1;
 
     var buf: [8]u8 = undefined;
-    try std.crypto.randomBytes(buf[0..]);
+    std.crypto.random.bytes(buf[0..]);
     const seed = std.mem.readIntLittle(u64, buf[0..8]);
     var r = std.rand.DefaultPrng.init(seed);
     const w = r.random.int(u64);

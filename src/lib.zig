@@ -13,7 +13,7 @@ pub const Ctx = struct {
     }
 };
 
-pub inline fn trace(comptime src: std.builtin.SourceLocation) Ctx {
+pub fn trace(comptime src: std.builtin.SourceLocation) callconv(.Inline) Ctx {
     const loc: c.___tracy_source_location_data = .{
         .name = null,
         .function = src.fn_name.ptr,
