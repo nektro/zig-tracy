@@ -1,6 +1,6 @@
 const std = @import("std");
 
-const tracy = @import("./lib.zig");
+const tracy = @import("tracy");
 
 var count: usize = 0;
 
