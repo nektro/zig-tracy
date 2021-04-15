@@ -7,7 +7,7 @@ Zig integration for the Tracy profiler.
 
 https://github.com/wolfpld/tracy
 
-Currently uses tracy v0.7.6
+Currently uses tracy v0.7.7
 
 ## Adding to your project
 Using the https://github.com/nektro/zigmod package manager.
