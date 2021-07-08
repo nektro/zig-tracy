@@ -14,8 +14,7 @@ Using the https://github.com/nektro/zigmod package manager.
 
 ```yml
 dependencies:
-  - type: git
-    path: https://github.com/nektro/zig-tracy
+  - src: git https://github.com/nektro/zig-tracy
 ```
 
 ## Adding it to your code
