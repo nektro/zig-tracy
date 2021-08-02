@@ -13,3 +13,7 @@ dependencies:
     c_source_files:
       - TracyClient.cpp
   - src: system_lib c++
+  - src: system_lib Ws2_32
+    only_os: windows
+  - src: system_lib DbgHelp
+    only_os: windows
