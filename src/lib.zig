@@ -5,6 +5,22 @@ pub const c = @cImport({
     @cInclude("TracyC.h");
 });
 
+pub const Frame = struct {
+    name: [*c]const u8,
+
+    pub fn end(self: Frame) void {
+        c.___tracy_emit_frame_mark_end(self.name);
+    }
+};
+
+pub fn frame(name: ?[*c]const u8) callconv(.Inline) Frame {
+    const f = Frame{
+        .name = if (name) |n| n else null,
+    };
+    c.___tracy_emit_frame_mark_start(f.name);
+    return f;
+}
+
 pub const Ctx = struct {
     c: c.___tracy_c_zone_context,
 

@@ -29,6 +29,21 @@ fn function_i_wish_to_trace() void {
 }
 ```
 
+```zig
+const tracy = @import("tracy");
+
+fn main() !void {
+    var quit = false;
+    while (!quit) {
+        const frame = tracy.frame(null);
+        defer frame.end();
+
+        // ...
+        // the rest of the loop
+    }
+}
+```
+
 ## Building
 ```
 $ zigmod fetch
