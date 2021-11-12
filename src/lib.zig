@@ -29,9 +29,9 @@ pub const Ctx = struct {
     }
 };
 
-pub fn trace(comptime src: std.builtin.SourceLocation) callconv(.Inline) Ctx {
+pub fn trace(comptime src: std.builtin.SourceLocation, name: ?[*c]const u8) callconv(.Inline) Ctx {
     const loc: c.___tracy_source_location_data = .{
-        .name = null,
+        .name = if (name) |n| n else null,
         .function = src.fn_name.ptr,
         .file = src.file.ptr,
         .line = src.line,

@@ -22,12 +22,16 @@ dependencies:
 const tracy = @import("tracy");
 
 fn function_i_wish_to_trace() void {
-    const t = tracy.trace(@src());
+    const t = tracy.trace(@src(), null);
     defer t.end();
     // ...
     // the rest of the function body
 }
 ```
+
+The second parameter to `trace` can be used to give a name to the zone,
+otherwise it will simply be the inferred function name and location in the
+source code.
 
 ```zig
 const tracy = @import("tracy");
