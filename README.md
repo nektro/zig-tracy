@@ -13,7 +13,7 @@ Currently uses tracy v0.7.8
 Using the https://github.com/nektro/zigmod package manager.
 
 ```yml
-dependencies:
+root_dependencies:
   - src: git https://github.com/nektro/zig-tracy
 ```
 
