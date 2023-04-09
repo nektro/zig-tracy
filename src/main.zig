@@ -19,7 +19,7 @@ pub fn main() anyerror!void {
     std.crypto.random.bytes(buf[0..]);
     const seed = std.mem.readIntLittle(u64, buf[0..8]);
     var r = std.rand.DefaultPrng.init(seed);
-    const w = r.random.int(u64);
+    const w = r.random().int(u64);
 
     std.time.sleep(1000_000_000 * (w % 5));
     try main();
