@@ -4,7 +4,7 @@ main: src/lib.zig
 license: MIT
 description: Zig integration for the Tracy profiler.
 dependencies:
-  - src: git https://github.com/wolfpld/tracy tag-v0.7.8
+  - src: git https://github.com/wolfpld/tracy tag-v0.9.1
     c_include_dirs:
       -
     c_source_flags:
